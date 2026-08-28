@@ -26,9 +26,9 @@
     --u1-bg: #EEF3F7;
     --u2: #2F7D6B;   /* 2단원 - AI 에이전트 : 딥틸 */
     --u2-bg: #EAF3F0;
-    --u3: #B5762B;   /* 3단원 - 도구 사용 : 앰버 */
+    --u3: #B5762B;   /* 3단원 - 정보 활용 : 앰버 */
     --u3-bg: #FAF1E4;
-    --u4: #7A5A9E;   /* 4단원 - 정보 활용 : 보라 */
+    --u4: #7A5A9E;   /* 4단원 - 도구 사용 : 보라 */
     --u4-bg: #F3EFF7;
     --u5: #B0432F;   /* 5단원 - 계획과 문제 해결 : 테라코타 */
     --u5-bg: #FAEFEC;
@@ -920,8 +920,8 @@
     <div class="nav-group-label">5단원 구성</div>
     <a href="#unit1"><span class="nav-dot" style="background:var(--u1)"></span>1단원 · 인공지능과 LLM</a>
     <a href="#unit2"><span class="nav-dot" style="background:var(--u2)"></span>2단원 · AI 에이전트</a>
-    <a href="#unit3"><span class="nav-dot" style="background:var(--u3)"></span>3단원 · 도구 사용</a>
-    <a href="#unit4"><span class="nav-dot" style="background:var(--u4)"></span>4단원 · 정보 활용</a>
+    <a href="#unit3"><span class="nav-dot" style="background:var(--u3)"></span>3단원 · 정보 활용</a>
+    <a href="#unit4"><span class="nav-dot" style="background:var(--u4)"></span>4단원 · 도구 사용</a>
     <a href="#unit5"><span class="nav-dot" style="background:var(--u5)"></span>5단원 · 계획과 문제 해결</a>
 
     <div class="nav-group-label">정리</div>
@@ -959,8 +959,8 @@
   <div class="flow-strip">
     <div class="cell"><div class="num">1</div><div class="title">인공지능과 LLM</div><div class="desc">생성형 AI와 언어 모델의 기본 원리</div></div>
     <div class="cell"><div class="num">2</div><div class="title">AI 에이전트</div><div class="desc">목표-행동-결과를 반복하는 문제 해결</div></div>
-    <div class="cell"><div class="num">3</div><div class="title">도구 사용</div><div class="desc">함수와 API를 선택하여 실행</div></div>
-    <div class="cell"><div class="num">4</div><div class="title">정보 활용</div><div class="desc">외부 문서를 찾아 근거 기반으로 답변</div></div>
+    <div class="cell"><div class="num">3</div><div class="title">정보 활용</div><div class="desc">외부 문서를 찾아 근거 기반으로 답변</div></div>
+    <div class="cell"><div class="num">4</div><div class="title">도구 사용</div><div class="desc">함수와 API를 선택하여 실행</div></div>
     <div class="cell"><div class="num">5</div><div class="title">계획과 문제 해결</div><div class="desc">복잡한 문제를 나누고 순서대로 해결</div></div>
   </div>
 </div>
@@ -1032,7 +1032,7 @@
 
   <div class="unit-idea" style="border-left-color:var(--ink); margin-top:18px;">
     <span class="label">전체 학습 흐름</span>
-    LLM 이해 → 에이전트 이해 → 도구 사용 → 정보 활용 → 계획 기반 문제 해결
+    LLM 이해 → 에이전트 이해 → 정보 활용 → 도구 사용 → 계획 기반 문제 해결
   </div>
 </section>
 
@@ -1188,23 +1188,29 @@
     <div class="subunit-label">중단원·소단원 구성 <span class="total">총 33쪽</span></div>
     <ol class="subunit-list">
       <li>
-        <div class="subunit-name">2-1. 에이전트의 개념과 Agent Loop <span class="pages">17쪽</span></div>
-        <div class="subunit-desc">LLM과 AI 에이전트의 차이, 목표(Goal)·행동(Action)·관찰(Observation), Agent Loop와 종료 조건, 자율성 수준(Human-in-the-loop)을 다룬다. “수행평가 일정 정리 에이전트” 활동으로 도입한다.</div>
+        <div class="subunit-name">2-1. 에이전트의 개념과 Agent Loop <span class="pages">12쪽</span></div>
+        <div class="subunit-desc">LLM과 AI 에이전트의 차이, 목표(Goal)·행동(Action)·관찰(Observation), Agent Loop와 종료 조건을 다룬다. “수행평가 일정 정리 에이전트” 활동으로 도입한다.</div>
         <ol class="subsubunit-list">
           <li><span class="subsub-name">2-1-1. LLM과 AI 에이전트의 차이</span><span class="subsub-pages">3쪽</span></li>
           <li><span class="subsub-name">2-1-2. 목표·행동·관찰(Goal-Action-Observation)</span><span class="subsub-pages">4쪽</span></li>
           <li><span class="subsub-name">2-1-3. Agent Loop와 종료 조건</span><span class="subsub-pages">5쪽</span></li>
-          <li><span class="subsub-name">2-1-4. 자율성 수준과 인간 개입(Human-in-the-loop)</span><span class="subsub-pages">5쪽</span></li>
         </ol>
       </li>
       <li>
-        <div class="subunit-name">2-2. 목표 분해와 오류 처리 <span class="pages">16쪽</span></div>
-        <div class="subunit-desc">목표를 작은 작업으로 나누고 상황에 따라 행동을 선택하는 흐름을 설계하며, 반복이 길어지거나 실패할 때 중단·재시도하는 처리와 사람이 확인해야 할 일을 구분한다.</div>
+        <div class="subunit-name">2-2. 목표 분해와 오류 처리 <span class="pages">12쪽</span></div>
+        <div class="subunit-desc">목표를 작은 작업으로 나누고 상황에 따라 행동을 선택하는 흐름을 설계하며, 반복이 길어지거나 실패할 때 중단·재시도하는 처리를 다룬다.</div>
         <ol class="subsubunit-list">
           <li><span class="subsub-name">2-2-1. 목표를 작은 작업으로 나누기</span><span class="subsub-pages">4쪽</span></li>
           <li><span class="subsub-name">2-2-2. 상황에 따른 행동 선택</span><span class="subsub-pages">4쪽</span></li>
           <li><span class="subsub-name">2-2-3. 결과 확인과 재시도·중단 처리</span><span class="subsub-pages">4쪽</span></li>
-          <li><span class="subsub-name">2-2-4. 사람이 확인해야 할 일 구분하기</span><span class="subsub-pages">4쪽</span></li>
+        </ol>
+      </li>
+      <li>
+        <div class="subunit-name">2-3. 자율성과 인간의 역할 <span class="pages">9쪽</span></div>
+        <div class="subunit-desc">에이전트의 자율성 수준을 판단해 인간이 개입·확인해야 하는 지점을 구분한다. 2-1, 2-2에 흩어져 있던 인간 개입 관련 내용을 별도 중단원으로 모아 책임 있는 활용 태도를 집중적으로 다룬다.</div>
+        <ol class="subsubunit-list">
+          <li><span class="subsub-name">2-3-1. 자율성 수준과 인간 개입(Human-in-the-loop)</span><span class="subsub-pages">5쪽</span></li>
+          <li><span class="subsub-name">2-3-2. 사람이 확인해야 할 일 구분하기</span><span class="subsub-pages">4쪽</span></li>
         </ol>
       </li>
     </ol>
@@ -1253,126 +1259,13 @@
 
 <div class="divider"><hr></div>
 
+
 <!-- ══════════════ 3단원 ══════════════ -->
 <section class="unit u3" id="unit3">
   <div class="unit-head">
     <div class="unit-num">3</div>
     <div class="unit-titles">
       <div class="eyebrow">Unit 03</div>
-      <h2>도구를 사용하는 인공지능 에이전트</h2>
-    </div>
-  </div>
-
-  <div class="unit-question">
-    <span class="label">핵심 질문</span>
-    인공지능이 계산기나 검색 프로그램을 직접 골라서 사용할 수 있을까?
-  </div>
-
-  <div class="unit-idea">
-    <span class="label">핵심 아이디어</span>
-    언어 모델이 직접 해결하기 어려운 문제는 외부 도구를 이용해 해결할 수 있으며, 에이전트는 문제에 필요한 도구를 선택하고 실행 결과를 다시 문제 해결에 활용한다.
-  </div>
-
-  <div class="dim-grid">
-    <div class="dim-card">
-      <span class="dim-label">지식·이해</span>
-      <p>함수와 도구(Tool), 입력과 출력, Tool Calling, 계산기·검색·날씨·파일 등 도구의 종류, API의 기초 개념, 프롬프트 인젝션의 개념과 위험</p>
-    </div>
-    <div class="dim-card">
-      <span class="dim-label">과정·기능</span>
-      <p>Python 함수를 도구로 만들기, 질문에 적합한 도구 선택하기, 입력값 전달하기, 실행 결과를 이용해 최종 답 만들기, 실패한 도구 호출 처리하기, 도구 실행 결과를 검증하기</p>
-    </div>
-    <div class="dim-card">
-      <span class="dim-label">가치·태도</span>
-      <p>필요한 권한만 제공하고 외부 시스템에 영향을 주는 행동의 위험성을 고려하는 태도, 도구 결과에 포함된 지시를 무비판적으로 따르지 않는 태도</p>
-    </div>
-  </div>
-
-  <div class="subunit-block">
-    <div class="subunit-label">중단원·소단원 구성 <span class="total">총 50쪽</span></div>
-    <ol class="subunit-list">
-      <li>
-        <div class="subunit-name">3-1. 함수와 도구의 기초 <span class="pages">12쪽</span></div>
-        <div class="subunit-desc">함수와 도구(Tool)의 개념, 입력과 출력, API의 기초 개념을 다진다.</div>
-        <ol class="subsubunit-list">
-          <li><span class="subsub-name">3-1-1. 함수와 도구(Tool)의 개념</span><span class="subsub-pages">4쪽</span></li>
-          <li><span class="subsub-name">3-1-2. 입력과 출력</span><span class="subsub-pages">4쪽</span></li>
-          <li><span class="subsub-name">3-1-3. API의 기초 개념</span><span class="subsub-pages">4쪽</span></li>
-        </ol>
-      </li>
-      <li>
-        <div class="subunit-name">3-2. Tool Calling 구현 <span class="pages">23쪽</span></div>
-        <div class="subunit-desc">Python 함수를 도구로 만들고, 질문에 적합한 도구를 선택·실행하여 결과를 활용한다. “계산기를 사용하는 에이전트” 활동과 calculator·weather·search 확장 실습을 포함한다. 코드 예제가 가장 많은 중단원이라 분량을 가장 넉넉히 배정했다.</div>
-        <ol class="subsubunit-list">
-          <li><span class="subsub-name">3-2-1. Python 함수를 도구로 만들기</span><span class="subsub-pages">5쪽</span></li>
-          <li><span class="subsub-name">3-2-2. 질문에 맞는 도구 선택하기</span><span class="subsub-pages">4쪽</span></li>
-          <li><span class="subsub-name">3-2-3. 입력값 전달과 결과 활용</span><span class="subsub-pages">5쪽</span></li>
-          <li><span class="subsub-name">3-2-4. 실패한 도구 호출 처리하기</span><span class="subsub-pages">4쪽</span></li>
-          <li><span class="subsub-name">3-2-5. 확장 실습: 여러 도구 조합하기</span><span class="subsub-pages">5쪽</span></li>
-        </ol>
-      </li>
-      <li>
-        <div class="subunit-name">3-3. 도구 사용의 위험과 안전 <span class="pages">15쪽</span></div>
-        <div class="subunit-desc">필요한 권한만 제공하는 원칙, 프롬프트 인젝션의 개념과 위험, 도구 실행 결과를 검증하고 외부 지시를 무비판적으로 따르지 않는 태도를 다룬다. 신규 반영된 프롬프트 인젝션 내용은 구체적 사례 제시가 필요해 분량을 확대했다.</div>
-        <ol class="subsubunit-list">
-          <li><span class="subsub-name">3-3-1. 권한 최소화의 원칙</span><span class="subsub-pages">3쪽</span></li>
-          <li><span class="subsub-name">3-3-2. 프롬프트 인젝션의 개념과 위험</span><span class="subsub-pages">6쪽</span></li>
-          <li><span class="subsub-name">3-3-3. 도구 실행 결과 검증하기</span><span class="subsub-pages">3쪽</span></li>
-          <li><span class="subsub-name">3-3-4. 외부 지시를 비판적으로 수용하는 태도</span><span class="subsub-pages">3쪽</span></li>
-        </ol>
-      </li>
-    </ol>
-  </div>
-
-  <div class="std-block">
-    <div class="std-label">성취기준</div>
-    <ol class="std-list">
-      <li class="std-item"><span class="std-code">12인에03-01</span><span class="std-text">함수와 도구의 개념을 이해하고 API를 활용해 파이썬 함수를 에이전트의 도구로 구현할 수 있다.</span></li>
-      <li class="std-item"><span class="std-code">12인에03-02</span><span class="std-text">문제에 적합한 도구를 선택·호출하여 실행 결과를 문제 해결에 활용하고, 실패한 도구 호출을 처리할 수 있다.</span></li>
-      <li class="std-item"><span class="std-code">12인에03-03</span><span class="std-text">프롬프트 인젝션 등 도구 사용 과정에서 발생할 수 있는 위험을 이해하고, 필요한 권한만 부여하며 외부 입력을 비판적으로 검증하는 태도를 가진다.</span></li>
-    </ol>
-    <div class="std-min"><b>최소 성취수준(C)</b> — 주어진 함수를 도구로 등록하는 절차를 따라 실행하고, 도구 호출 결과를 확인하여 최종 답을 구성할 수 있다.</div>
-  </div>
-
-  <div class="activity-box">
-    <div class="activity-head">대표 학습 활동 <span class="tag">계산기를 사용하는 에이전트</span></div>
-    <div class="activity-body">
-      <p style="margin-top:0;">언어 모델이 암산하는 대신, 문제를 보고 계산이 필요하다고 판단한 뒤 calculator 함수를 선택하여 결과를 사용하도록 한다.</p>
-      <div class="flow-diagram">
-        <div class="flow-step io">사용자: “123 × 456은 얼마야?”</div>
-        <div class="flow-arrow">↓</div>
-        <div class="flow-step">에이전트: “계산 도구가 필요하다.”</div>
-        <div class="flow-arrow">↓</div>
-        <div class="flow-step">calculator(123, 456) 실행</div>
-        <div class="flow-arrow">↓</div>
-        <div class="flow-step io">도구 결과: 56088</div>
-        <div class="flow-arrow">↓</div>
-        <div class="flow-step io">에이전트: “답은 56,088입니다.”</div>
-      </div>
-      <div class="point-row">
-        <div class="point-item"><b>수업 포인트 —</b> 핵심은 특정 라이브러리의 문법이 아니라 “문제 → 도구 선택 → 실행 → 결과 활용” 구조를 이해하는 것이다.</div>
-        <div class="point-item"><b>확장 실습 —</b> calculator(), weather(), search() 세 도구를 제공하고 질문에 따라 알맞은 도구를 선택하게 한다.</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="care-corner">
-    <div class="icon">!</div>
-    <div class="txt">
-      <div class="label">책임 있는 AI 코너</div>
-      <p>메시지 전송, 파일 삭제처럼 실제 환경을 바꾸는 도구는 자동 실행하지 않고 사용자의 확인을 받도록 설계할 수 있다.</p>
-    </div>
-  </div>
-</section>
-
-<div class="divider"><hr></div>
-
-<!-- ══════════════ 4단원 ══════════════ -->
-<section class="unit u4" id="unit4">
-  <div class="unit-head">
-    <div class="unit-num">4</div>
-    <div class="unit-titles">
-      <div class="eyebrow">Unit 04</div>
       <h2>정보를 찾아 활용하는 인공지능 에이전트</h2>
     </div>
   </div>
@@ -1406,23 +1299,23 @@
     <div class="subunit-label">중단원·소단원 구성 <span class="total">총 33쪽</span></div>
     <ol class="subunit-list">
       <li>
-        <div class="subunit-name">4-1. 검색과 근거 기반 답변의 기초 <span class="pages">17쪽</span></div>
+        <div class="subunit-name">3-1. 검색과 근거 기반 답변의 기초 <span class="pages">17쪽</span></div>
         <div class="subunit-desc">LLM 지식의 한계, 외부 문서와 데이터, 정보 검색과 의미 기반 검색(임베딩·유사도)의 기초, 검색 증강 생성(RAG)의 기본 원리를 다룬다. “학교생활 안내 에이전트” 활동으로 도입한다. 신규 반영된 의미 기반 검색 개념은 도식과 예시 문서가 필요해 분량을 확대했다.</div>
         <ol class="subsubunit-list">
-          <li><span class="subsub-name">4-1-1. LLM 지식의 한계와 외부 문서</span><span class="subsub-pages">3쪽</span></li>
-          <li><span class="subsub-name">4-1-2. 정보 검색과 의미 기반 검색(임베딩·유사도)</span><span class="subsub-pages">6쪽</span></li>
-          <li><span class="subsub-name">4-1-3. 검색 증강 생성(RAG)의 기본 원리</span><span class="subsub-pages">5쪽</span></li>
-          <li><span class="subsub-name">4-1-4. 학교생활 안내 에이전트 실습</span><span class="subsub-pages">3쪽</span></li>
+          <li><span class="subsub-name">3-1-1. LLM 지식의 한계와 외부 문서</span><span class="subsub-pages">3쪽</span></li>
+          <li><span class="subsub-name">3-1-2. 정보 검색과 의미 기반 검색(임베딩·유사도)</span><span class="subsub-pages">6쪽</span></li>
+          <li><span class="subsub-name">3-1-3. 검색 증강 생성(RAG)의 기본 원리</span><span class="subsub-pages">5쪽</span></li>
+          <li><span class="subsub-name">3-1-4. 학교생활 안내 에이전트 실습</span><span class="subsub-pages">3쪽</span></li>
         </ol>
       </li>
       <li>
-        <div class="subunit-name">4-2. 신뢰할 수 있는 답변 만들기 <span class="pages">16쪽</span></div>
+        <div class="subunit-name">3-2. 신뢰할 수 있는 답변 만들기 <span class="pages">16쪽</span></div>
         <div class="subunit-desc">근거가 있는 답변 만들기, 문서에 없는 질문은 모른다고 판단하기, 자료마다 답이 다를 때 판단하는 절차, 출처·최신성 확인과 개인정보·저작권을 다룬다.</div>
         <ol class="subsubunit-list">
-          <li><span class="subsub-name">4-2-1. 근거 있는 답변 만들기</span><span class="subsub-pages">4쪽</span></li>
-          <li><span class="subsub-name">4-2-2. 모른다고 판단하기(반례 다루기)</span><span class="subsub-pages">3쪽</span></li>
-          <li><span class="subsub-name">4-2-3. 자료 간 상충 시 판단하기</span><span class="subsub-pages">4쪽</span></li>
-          <li><span class="subsub-name">4-2-4. 출처·최신성 확인과 개인정보·저작권</span><span class="subsub-pages">5쪽</span></li>
+          <li><span class="subsub-name">3-2-1. 근거 있는 답변 만들기</span><span class="subsub-pages">4쪽</span></li>
+          <li><span class="subsub-name">3-2-2. 모른다고 판단하기(반례 다루기)</span><span class="subsub-pages">3쪽</span></li>
+          <li><span class="subsub-name">3-2-3. 자료 간 상충 시 판단하기</span><span class="subsub-pages">4쪽</span></li>
+          <li><span class="subsub-name">3-2-4. 출처·최신성 확인과 개인정보·저작권</span><span class="subsub-pages">5쪽</span></li>
         </ol>
       </li>
     </ol>
@@ -1431,9 +1324,9 @@
   <div class="std-block">
     <div class="std-label">성취기준</div>
     <ol class="std-list">
-      <li class="std-item"><span class="std-code">12인에04-01</span><span class="std-text">LLM 지식의 한계를 이해하고 의미 기반 검색을 통해 외부 문서에서 관련 정보를 찾아 검색 증강 생성(RAG)의 기본 원리를 설명할 수 있다.</span></li>
-      <li class="std-item"><span class="std-code">12인에04-02</span><span class="std-text">검색한 근거를 바탕으로 답변을 생성하고, 문서에 없거나 자료 간 내용이 상충하는 경우를 판단하여 처리할 수 있다.</span></li>
-      <li class="std-item"><span class="std-code">12인에04-03</span><span class="std-text">정보의 출처와 최신성을 확인하고 개인정보와 저작권을 고려하여 근거 없는 답변을 만들지 않는 태도를 가진다.</span></li>
+      <li class="std-item"><span class="std-code">12인에03-01</span><span class="std-text">LLM 지식의 한계를 이해하고 의미 기반 검색을 통해 외부 문서에서 관련 정보를 찾아 검색 증강 생성(RAG)의 기본 원리를 설명할 수 있다.</span></li>
+      <li class="std-item"><span class="std-code">12인에03-02</span><span class="std-text">검색한 근거를 바탕으로 답변을 생성하고, 문서에 없거나 자료 간 내용이 상충하는 경우를 판단하여 처리할 수 있다.</span></li>
+      <li class="std-item"><span class="std-code">12인에03-03</span><span class="std-text">정보의 출처와 최신성을 확인하고 개인정보와 저작권을 고려하여 근거 없는 답변을 만들지 않는 태도를 가진다.</span></li>
     </ol>
     <div class="std-min"><b>최소 성취수준(C)</b> — 주어진 문서에서 질문과 관련된 부분을 찾아 답변에 활용하고, 문서에 없는 내용은 “확인할 수 없다”고 답하는 절차를 따를 수 있다.</div>
   </div>
@@ -1465,6 +1358,121 @@
     <div class="txt">
       <div class="label">책임 있는 AI 코너</div>
       <p>검색된 자료에도 오류나 편향이 있을 수 있다. 답변과 함께 출처를 확인하고, 개인 정보나 저작권이 있는 자료를 무분별하게 저장·사용하지 않는다.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"><hr></div>
+
+
+<!-- ══════════════ 4단원 ══════════════ -->
+<section class="unit u4" id="unit4">
+  <div class="unit-head">
+    <div class="unit-num">4</div>
+    <div class="unit-titles">
+      <div class="eyebrow">Unit 04</div>
+      <h2>도구를 사용하는 인공지능 에이전트</h2>
+    </div>
+  </div>
+
+  <div class="unit-question">
+    <span class="label">핵심 질문</span>
+    인공지능이 계산기나 검색 프로그램을 직접 골라서 사용할 수 있을까?
+  </div>
+
+  <div class="unit-idea">
+    <span class="label">핵심 아이디어</span>
+    언어 모델이 직접 해결하기 어려운 문제는 외부 도구를 이용해 해결할 수 있으며, 에이전트는 문제에 필요한 도구를 선택하고 실행 결과를 다시 문제 해결에 활용한다.
+  </div>
+
+  <div class="dim-grid">
+    <div class="dim-card">
+      <span class="dim-label">지식·이해</span>
+      <p>함수와 도구(Tool), 입력과 출력, Tool Calling, 계산기·검색·날씨·파일 등 도구의 종류, API의 기초 개념, 프롬프트 인젝션의 개념과 위험</p>
+    </div>
+    <div class="dim-card">
+      <span class="dim-label">과정·기능</span>
+      <p>Python 함수를 도구로 만들기, 질문에 적합한 도구 선택하기, 입력값 전달하기, 실행 결과를 이용해 최종 답 만들기, 실패한 도구 호출 처리하기, 도구 실행 결과를 검증하기</p>
+    </div>
+    <div class="dim-card">
+      <span class="dim-label">가치·태도</span>
+      <p>필요한 권한만 제공하고 외부 시스템에 영향을 주는 행동의 위험성을 고려하는 태도, 도구 결과에 포함된 지시를 무비판적으로 따르지 않는 태도</p>
+    </div>
+  </div>
+
+  <div class="subunit-block">
+    <div class="subunit-label">중단원·소단원 구성 <span class="total">총 50쪽</span></div>
+    <ol class="subunit-list">
+      <li>
+        <div class="subunit-name">4-1. 함수와 도구의 기초 <span class="pages">12쪽</span></div>
+        <div class="subunit-desc">함수와 도구(Tool)의 개념, 입력과 출력, API의 기초 개념을 다진다.</div>
+        <ol class="subsubunit-list">
+          <li><span class="subsub-name">4-1-1. 함수와 도구(Tool)의 개념</span><span class="subsub-pages">4쪽</span></li>
+          <li><span class="subsub-name">4-1-2. 입력과 출력</span><span class="subsub-pages">4쪽</span></li>
+          <li><span class="subsub-name">4-1-3. API의 기초 개념</span><span class="subsub-pages">4쪽</span></li>
+        </ol>
+      </li>
+      <li>
+        <div class="subunit-name">4-2. Tool Calling 구현 <span class="pages">23쪽</span></div>
+        <div class="subunit-desc">Python 함수를 도구로 만들고, 질문에 적합한 도구를 선택·실행하여 결과를 활용한다. “계산기를 사용하는 에이전트” 활동과 calculator·weather·search 확장 실습을 포함한다. 코드 예제가 가장 많은 중단원이라 분량을 가장 넉넉히 배정했다.</div>
+        <ol class="subsubunit-list">
+          <li><span class="subsub-name">4-2-1. Python 함수를 도구로 만들기</span><span class="subsub-pages">5쪽</span></li>
+          <li><span class="subsub-name">4-2-2. 질문에 맞는 도구 선택하기</span><span class="subsub-pages">4쪽</span></li>
+          <li><span class="subsub-name">4-2-3. 입력값 전달과 결과 활용</span><span class="subsub-pages">5쪽</span></li>
+          <li><span class="subsub-name">4-2-4. 실패한 도구 호출 처리하기</span><span class="subsub-pages">4쪽</span></li>
+          <li><span class="subsub-name">4-2-5. 확장 실습: 여러 도구 조합하기</span><span class="subsub-pages">5쪽</span></li>
+        </ol>
+      </li>
+      <li>
+        <div class="subunit-name">4-3. 도구 사용의 위험과 안전 <span class="pages">15쪽</span></div>
+        <div class="subunit-desc">필요한 권한만 제공하는 원칙, 프롬프트 인젝션의 개념과 위험, 도구 실행 결과를 검증하고 외부 지시를 무비판적으로 따르지 않는 태도를 다룬다. 신규 반영된 프롬프트 인젝션 내용은 구체적 사례 제시가 필요해 분량을 확대했다.</div>
+        <ol class="subsubunit-list">
+          <li><span class="subsub-name">4-3-1. 권한 최소화의 원칙</span><span class="subsub-pages">3쪽</span></li>
+          <li><span class="subsub-name">4-3-2. 프롬프트 인젝션의 개념과 위험</span><span class="subsub-pages">6쪽</span></li>
+          <li><span class="subsub-name">4-3-3. 도구 실행 결과 검증하기</span><span class="subsub-pages">3쪽</span></li>
+          <li><span class="subsub-name">4-3-4. 외부 지시를 비판적으로 수용하는 태도</span><span class="subsub-pages">3쪽</span></li>
+        </ol>
+      </li>
+    </ol>
+  </div>
+
+  <div class="std-block">
+    <div class="std-label">성취기준</div>
+    <ol class="std-list">
+      <li class="std-item"><span class="std-code">12인에04-01</span><span class="std-text">함수와 도구의 개념을 이해하고 API를 활용해 파이썬 함수를 에이전트의 도구로 구현할 수 있다.</span></li>
+      <li class="std-item"><span class="std-code">12인에04-02</span><span class="std-text">문제에 적합한 도구를 선택·호출하여 실행 결과를 문제 해결에 활용하고, 실패한 도구 호출을 처리할 수 있다.</span></li>
+      <li class="std-item"><span class="std-code">12인에04-03</span><span class="std-text">프롬프트 인젝션 등 도구 사용 과정에서 발생할 수 있는 위험을 이해하고, 필요한 권한만 부여하며 외부 입력을 비판적으로 검증하는 태도를 가진다.</span></li>
+    </ol>
+    <div class="std-min"><b>최소 성취수준(C)</b> — 주어진 함수를 도구로 등록하는 절차를 따라 실행하고, 도구 호출 결과를 확인하여 최종 답을 구성할 수 있다.</div>
+  </div>
+
+  <div class="activity-box">
+    <div class="activity-head">대표 학습 활동 <span class="tag">계산기를 사용하는 에이전트</span></div>
+    <div class="activity-body">
+      <p style="margin-top:0;">언어 모델이 암산하는 대신, 문제를 보고 계산이 필요하다고 판단한 뒤 calculator 함수를 선택하여 결과를 사용하도록 한다.</p>
+      <div class="flow-diagram">
+        <div class="flow-step io">사용자: “123 × 456은 얼마야?”</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-step">에이전트: “계산 도구가 필요하다.”</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-step">calculator(123, 456) 실행</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-step io">도구 결과: 56088</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-step io">에이전트: “답은 56,088입니다.”</div>
+      </div>
+      <div class="point-row">
+        <div class="point-item"><b>수업 포인트 —</b> 핵심은 특정 라이브러리의 문법이 아니라 “문제 → 도구 선택 → 실행 → 결과 활용” 구조를 이해하는 것이다.</div>
+        <div class="point-item"><b>확장 실습 —</b> calculator(), weather(), search() 세 도구를 제공하고 질문에 따라 알맞은 도구를 선택하게 한다.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="care-corner">
+    <div class="icon">!</div>
+    <div class="txt">
+      <div class="label">책임 있는 AI 코너</div>
+      <p>메시지 전송, 파일 삭제처럼 실제 환경을 바꾸는 도구는 자동 실행하지 않고 사용자의 확인을 받도록 설계할 수 있다.</p>
     </div>
   </div>
 </section>
@@ -1592,7 +1600,7 @@
 
   <div class="unit-idea" style="border-left-color:var(--ink);">
     <span class="label">학생에게 보이는 학습 이야기</span>
-    생각하는 AI를 이해한다 → 일을 수행하는 AI를 이해한다 → 도구를 사용하게 한다 → 필요한 정보를 찾게 한다 → 여러 능력을 조합해 복잡한 문제를 해결하게 한다.
+    생각하는 AI를 이해한다 → 일을 수행하는 AI를 이해한다 → 필요한 정보를 찾게 한다 → 도구를 사용하게 한다 → 여러 능력을 조합해 복잡한 문제를 해결하게 한다.
   </div>
 
   <table class="overview-table">
@@ -1621,18 +1629,18 @@
         <td class="exp">지창은</td>
       </tr>
       <tr>
-        <td><span class="unit-chip"><span class="dot" style="background:var(--u3)"></span>3. 도구 사용</span></td>
-        <td class="q">AI가 계산기·검색을 쓸 수 있을까?</td>
-        <td class="exp">Tool Calling 구현</td>
-        <td class="exp">50쪽</td>
-        <td class="exp">이준구</td>
-      </tr>
-      <tr>
-        <td><span class="unit-chip"><span class="dot" style="background:var(--u4)"></span>4. 정보 활용</span></td>
+        <td><span class="unit-chip"><span class="dot" style="background:var(--u3)"></span>3. 정보 활용</span></td>
         <td class="q">모르는 내용은 어떻게 찾을까?</td>
         <td class="exp">찾기-읽기-답하기(RAG)</td>
         <td class="exp">33쪽</td>
         <td class="exp">조현아</td>
+      </tr>
+      <tr>
+        <td><span class="unit-chip"><span class="dot" style="background:var(--u4)"></span>4. 도구 사용</span></td>
+        <td class="q">AI가 계산기·검색을 쓸 수 있을까?</td>
+        <td class="exp">Tool Calling 구현</td>
+        <td class="exp">50쪽</td>
+        <td class="exp">이준구</td>
       </tr>
       <tr>
         <td><span class="unit-chip"><span class="dot" style="background:var(--u5)"></span>5. 계획과 문제 해결</span></td>
@@ -1653,8 +1661,8 @@
   <div class="cross-list">
     <div class="cross-item"><span class="chip" style="background:var(--u1)">1단원</span><span class="txt">환각과 생성 결과 검증</span></div>
     <div class="cross-item"><span class="chip" style="background:var(--u2)">2단원</span><span class="txt">인간의 최종 확인과 책임</span></div>
-    <div class="cross-item"><span class="chip" style="background:var(--u3)">3단원</span><span class="txt">외부 도구의 권한과 위험한 행동 제한</span></div>
-    <div class="cross-item"><span class="chip" style="background:var(--u4)">4단원</span><span class="txt">출처, 개인정보, 저작권</span></div>
+    <div class="cross-item"><span class="chip" style="background:var(--u3)">3단원</span><span class="txt">출처, 개인정보, 저작권</span></div>
+    <div class="cross-item"><span class="chip" style="background:var(--u4)">4단원</span><span class="txt">외부 도구의 권한과 위험한 행동 제한</span></div>
     <div class="cross-item"><span class="chip" style="background:var(--u5)">5단원</span><span class="txt">계획 결과의 검토와 인간의 통제</span></div>
   </div>
 
@@ -1668,7 +1676,7 @@
   </div>
 
   <div class="ref-note">
-    <b style="color:var(--ink-soft);">중단원·소단원·분량 배분 근거</b> — 머리말·차례·찾아보기·판권 등 부록(총 10쪽 별도)을 제외한 <b>본문 200쪽</b>을 5개 단원의 특성에 맞추어 배분했다. 우선 소단원 개수(총 48개)에 비례해 단원별 기준 분량을 산정한 뒤, 단원별 내용 밀도를 반영해 조정했다. 1단원(9개 소단원, 38쪽)·2단원(8개, 33쪽)은 개념 설명 위주라 기준 분량을 유지했고, 3단원(12개, 50쪽)은 코드 예제가 가장 많고 이번에 반영된 프롬프트 인젝션 등 안전 내용이 구체적 사례 제시를 요구해 가장 넉넉히 배정했다. 4단원(8개, 33쪽)은 신규 반영된 의미 기반 검색(임베딩·유사도) 개념에 도식·예시 문서가 필요해 소폭 확대했고, 5단원(11개, 46쪽)은 통합 프로젝트(5-3)에 여러 예시와 구현 가이드를 실어야 해 단원 내 최대 분량을 배정했다. 단원별 중단원 개수는 3개로 통일하지 않고 내용 체계의 분량에 맞춰 1단원 3개, 2단원 2개, 3단원 3개, 4단원 2개, 5단원 3개로 가감했다. 소단원 쪽수는 개념 설명 2~3쪽, 예시·코드 1~2쪽, 활동·연습 1~2쪽을 기준으로 추정한 1차안이며, 실제 원고 집필 시 그림·표·실습 코드 분량에 따라 조정한다.
+    <b style="color:var(--ink-soft);">중단원·소단원·분량 배분 근거</b> — 머리말·차례·찾아보기·판권 등 부록(총 10쪽 별도)을 제외한 <b>본문 200쪽</b>을 5개 단원의 특성에 맞추어 배분했다. 우선 소단원 개수(총 48개)에 비례해 단원별 기준 분량을 산정한 뒤, 단원별 내용 밀도를 반영해 조정했다. 1단원(9개 소단원, 38쪽)·2단원(8개, 33쪽)은 개념 설명 위주라 기준 분량을 유지했고, 4단원(도구 사용, 12개, 50쪽)은 코드 예제가 가장 많고 이번에 반영된 프롬프트 인젝션 등 안전 내용이 구체적 사례 제시를 요구해 가장 넉넉히 배정했다. 3단원(정보 활용, 8개, 33쪽)은 신규 반영된 의미 기반 검색(임베딩·유사도) 개념에 도식·예시 문서가 필요해 소폭 확대했고, 5단원(11개, 46쪽)은 통합 프로젝트(5-3)에 여러 예시와 구현 가이드를 실어야 해 단원 내 최대 분량을 배정했다. 단원별 중단원 개수는 3개로 통일하지 않고 내용 체계의 분량에 맞춰 1단원 3개, 2단원 3개(자율성·인간 개입 관련 내용을 2-3으로 별도 구성), 3단원 2개, 4단원 3개, 5단원 3개로 가감했다. 소단원 쪽수는 개념 설명 2~3쪽, 예시·코드 1~2쪽, 활동·연습 1~2쪽을 기준으로 추정한 1차안이며, 실제 원고 집필 시 그림·표·실습 코드 분량에 따라 조정한다.
   </div>
 
   <div class="ref-note">

@@ -397,16 +397,18 @@
     padding:0;
     display:flex;
     flex-direction:column;
-    gap:4px;
+    gap:6px;
   }
   .subsubunit-list li{
+    padding:8px 11px 9px;
+    background:var(--line-soft);
+    border-radius:7px;
+  }
+  .subsub-head{
     display:flex;
     align-items:baseline;
     justify-content:space-between;
     gap:10px;
-    padding:7px 11px;
-    background:var(--line-soft);
-    border-radius:7px;
   }
   .subsub-name{
     font-size:12.2px;
@@ -417,6 +419,28 @@
     flex:none;
     font-size:10.8px;
     font-weight:700;
+    color:var(--ink-faint);
+  }
+  .concept-list{
+    list-style:none;
+    margin:6px 0 0;
+    padding:0;
+  }
+  .concept-list li{
+    position:relative;
+    padding:0 0 0 12px;
+    margin-bottom:2px;
+    background:transparent;
+    border-radius:0;
+    font-size:11.3px;
+    font-weight:400;
+    color:var(--ink-soft);
+    line-height:1.55;
+  }
+  .concept-list li::before{
+    content:"–";
+    position:absolute;
+    left:0;
     color:var(--ink-faint);
   }
 
@@ -1080,27 +1104,100 @@
         <div class="subunit-name">1-1. 생성형 AI와 언어 모델의 기본 원리 <span class="pages">13쪽</span></div>
         <div class="subunit-desc">인공지능과 생성형 AI, 학습과 추론의 차이, 토큰, 언어 모델의 생성 원리 — “LLM은 어떻게 문장을 이어 갈까?” 활동으로 직관을 형성한다.</div>
         <ol class="subsubunit-list">
-          <li><span class="subsub-name">1-1-1. 인공지능과 생성형 AI</span><span class="subsub-pages">4쪽</span></li>
-          <li><span class="subsub-name">1-1-2. 학습과 추론(학습과 사용의 차이)</span><span class="subsub-pages">4쪽</span></li>
-          <li><span class="subsub-name">1-1-3. 토큰과 언어 모델의 생성 원리</span><span class="subsub-pages">5쪽</span></li>
+          <li>
+            <div class="subsub-head"><span class="subsub-name">1-1-1. 인공지능과 생성형 AI</span><span class="subsub-pages">4쪽</span></div>
+            <ul class="concept-list">
+              <li>인공지능(AI)의 정의와 범위</li>
+              <li>판별형 AI와 생성형 AI의 차이(분류 vs 생성)</li>
+              <li>생성형 AI의 대표 사례(텍스트·이미지·코드 생성)</li>
+              <li>챗봇과 대규모 언어 모델(LLM)의 관계</li>
+            </ul>
+          </li>
+          <li>
+            <div class="subsub-head"><span class="subsub-name">1-1-2. 학습과 추론(학습과 사용의 차이)</span><span class="subsub-pages">4쪽</span></div>
+            <ul class="concept-list">
+              <li>학습(Training): 대량의 텍스트로 모델의 매개변수를 조정하는 과정</li>
+              <li>추론(Inference): 학습이 끝난 모델로 답을 생성하는 과정</li>
+              <li>사용자가 실제로 접하는 단계는 추론임</li>
+              <li>학습에는 많은 시간과 컴퓨팅 자원이 필요함</li>
+            </ul>
+          </li>
+          <li>
+            <div class="subsub-head"><span class="subsub-name">1-1-3. 토큰과 언어 모델의 생성 원리</span><span class="subsub-pages">5쪽</span></div>
+            <ul class="concept-list">
+              <li>토큰(Token): 언어 모델이 텍스트를 처리하는 최소 단위</li>
+              <li>단어·어절·부분 문자열 등으로 나뉠 수 있음</li>
+              <li>이전 토큰들을 바탕으로 다음 토큰의 확률을 계산함</li>
+              <li>확률이 높은 토큰을 순차적으로 이어 붙여 문장을 생성함</li>
+              <li>예시: “대한민국의 수도는” → “서울입니다” 생성 과정</li>
+            </ul>
+          </li>
         </ol>
       </li>
       <li>
         <div class="subunit-name">1-2. 프롬프트와 맥락 <span class="pages">12쪽</span></div>
         <div class="subunit-desc">프롬프트와 맥락(Context), 동일 질문에 대한 출력 비교, 프로그램에서 LLM을 호출하는 기본 흐름을 다룬다.</div>
         <ol class="subsubunit-list">
-          <li><span class="subsub-name">1-2-1. 프롬프트 설계의 기초</span><span class="subsub-pages">5쪽</span></li>
-          <li><span class="subsub-name">1-2-2. 맥락(Context)과 대화의 연속성</span><span class="subsub-pages">4쪽</span></li>
-          <li><span class="subsub-name">1-2-3. 프로그램에서 LLM 호출하기</span><span class="subsub-pages">3쪽</span></li>
+          <li>
+            <div class="subsub-head"><span class="subsub-name">1-2-1. 프롬프트 설계의 기초</span><span class="subsub-pages">5쪽</span></div>
+            <ul class="concept-list">
+              <li>프롬프트(Prompt): 언어 모델에 전달하는 입력 텍스트</li>
+              <li>명확하고 구체적인 지시일수록 정확한 결과를 이끌어냄</li>
+              <li>역할 부여, 예시 제공 등 프롬프트 작성 기법</li>
+              <li>같은 질문도 표현 방식에 따라 다른 결과가 나올 수 있음</li>
+            </ul>
+          </li>
+          <li>
+            <div class="subsub-head"><span class="subsub-name">1-2-2. 맥락(Context)과 대화의 연속성</span><span class="subsub-pages">4쪽</span></div>
+            <ul class="concept-list">
+              <li>맥락(Context): 답을 생성할 때 참고하는 이전 대화 내용</li>
+              <li>컨텍스트 윈도우(Context Window): 모델이 한 번에 처리할 수 있는 텍스트 범위</li>
+              <li>이전 대화를 반영하지 못하면 맥락이 끊길 수 있음</li>
+              <li>긴 대화에서는 오래된 내용이 컨텍스트에서 밀려날 수 있음</li>
+            </ul>
+          </li>
+          <li>
+            <div class="subsub-head"><span class="subsub-name">1-2-3. 프로그램에서 LLM 호출하기</span><span class="subsub-pages">3쪽</span></div>
+            <ul class="concept-list">
+              <li>API: 프로그램이 LLM에 요청을 보내고 응답을 받는 통로</li>
+              <li>요청(Request)에는 프롬프트, 모델 이름 등이 포함됨</li>
+              <li>응답(Response)에는 생성된 텍스트가 포함됨</li>
+              <li>파이썬 코드로 LLM 호출 흐름을 구현하는 기본 구조</li>
+            </ul>
+          </li>
         </ol>
       </li>
       <li>
         <div class="subunit-name">1-3. LLM의 한계와 책임 있는 사용 <span class="pages">13쪽</span></div>
         <div class="subunit-desc">환각(Hallucination)과 편향(Bias), 생성 결과를 검증하는 태도, 과도한 의존을 경계하는 태도를 다루며 책임 있는 AI 코너로 연결한다.</div>
         <ol class="subsubunit-list">
-          <li><span class="subsub-name">1-3-1. 환각(Hallucination)</span><span class="subsub-pages">5쪽</span></li>
-          <li><span class="subsub-name">1-3-2. 데이터 편향(Bias)</span><span class="subsub-pages">4쪽</span></li>
-          <li><span class="subsub-name">1-3-3. 검증하는 태도와 과도한 의존 경계</span><span class="subsub-pages">4쪽</span></li>
+          <li>
+            <div class="subsub-head"><span class="subsub-name">1-3-1. 환각(Hallucination)</span><span class="subsub-pages">5쪽</span></div>
+            <ul class="concept-list">
+              <li>환각: 사실이 아닌 내용을 그럴듯하게 생성하는 현상</li>
+              <li>모델은 사실 여부 판단 없이 확률적으로 그럴듯한 문장을 생성함</li>
+              <li>존재하지 않는 인물·사건·출처를 만들어내는 사례</li>
+              <li>환각을 완전히 없애기는 어려우며 검증이 필요함</li>
+            </ul>
+          </li>
+          <li>
+            <div class="subsub-head"><span class="subsub-name">1-3-2. 데이터 편향(Bias)</span><span class="subsub-pages">4쪽</span></div>
+            <ul class="concept-list">
+              <li>편향: 학습 데이터에 담긴 치우친 경향이 출력에 반영되는 현상</li>
+              <li>특정 집단·관점에 대한 고정관념이 재생산될 수 있음</li>
+              <li>편향의 원인은 학습 데이터의 구성에 있음</li>
+              <li>편향을 인식하고 비판적으로 결과를 살펴보는 습관 필요</li>
+            </ul>
+          </li>
+          <li>
+            <div class="subsub-head"><span class="subsub-name">1-3-3. 검증하는 태도와 과도한 의존 경계</span><span class="subsub-pages">4쪽</span></div>
+            <ul class="concept-list">
+              <li>생성 결과를 사실로 단정하지 않고 확인하는 습관</li>
+              <li>중요한 정보는 다른 출처와 교차 확인하기</li>
+              <li>AI에게 판단과 사고 과정 자체를 맡기지 않는 태도</li>
+              <li>스스로 생각하고 결정하는 역량 유지의 중요성</li>
+            </ul>
+          </li>
         </ol>
       </li>
     </ol>
@@ -1191,26 +1288,87 @@
         <div class="subunit-name">2-1. 에이전트의 개념과 Agent Loop <span class="pages">12쪽</span></div>
         <div class="subunit-desc">LLM과 AI 에이전트의 차이, 목표(Goal)·행동(Action)·관찰(Observation), Agent Loop와 종료 조건을 다룬다. “수행평가 일정 정리 에이전트” 활동으로 도입한다.</div>
         <ol class="subsubunit-list">
-          <li><span class="subsub-name">2-1-1. LLM과 AI 에이전트의 차이</span><span class="subsub-pages">3쪽</span></li>
-          <li><span class="subsub-name">2-1-2. 목표·행동·관찰(Goal-Action-Observation)</span><span class="subsub-pages">4쪽</span></li>
-          <li><span class="subsub-name">2-1-3. Agent Loop와 종료 조건</span><span class="subsub-pages">5쪽</span></li>
+          <li>
+            <div class="subsub-head"><span class="subsub-name">2-1-1. LLM과 AI 에이전트의 차이</span><span class="subsub-pages">3쪽</span></div>
+            <ul class="concept-list">
+              <li>LLM: 입력에 대해 한 번 응답을 생성하는 모델</li>
+              <li>AI 에이전트: 목표 달성을 위해 여러 단계의 행동을 스스로 수행하는 프로그램</li>
+              <li>에이전트는 LLM을 “두뇌”로 활용하며 도구·환경과 상호작용함</li>
+              <li>질문-답변형 AI와 일을 수행하는 AI의 차이</li>
+            </ul>
+          </li>
+          <li>
+            <div class="subsub-head"><span class="subsub-name">2-1-2. 목표·행동·관찰(Goal-Action-Observation)</span><span class="subsub-pages">4쪽</span></div>
+            <ul class="concept-list">
+              <li>목표(Goal): 에이전트가 달성해야 할 최종 상태</li>
+              <li>행동(Action): 목표를 위해 에이전트가 취하는 행위</li>
+              <li>관찰(Observation): 행동의 결과로 얻어지는 정보</li>
+              <li>세 요소가 반복되며 문제를 해결해 나감</li>
+            </ul>
+          </li>
+          <li>
+            <div class="subsub-head"><span class="subsub-name">2-1-3. Agent Loop와 종료 조건</span><span class="subsub-pages">5쪽</span></div>
+            <ul class="concept-list">
+              <li>Agent Loop: 목표 확인 → 행동 결정 → 행동 실행 → 결과 확인 → 반복의 순환 구조</li>
+              <li>종료 조건(Termination Condition): 반복을 멈추는 기준</li>
+              <li>종료 조건이 없으면 무한 반복에 빠질 위험이 있음</li>
+              <li>최대 반복 횟수, 목표 달성 여부 등이 종료 조건이 될 수 있음</li>
+            </ul>
+          </li>
         </ol>
       </li>
       <li>
         <div class="subunit-name">2-2. 목표 분해와 오류 처리 <span class="pages">12쪽</span></div>
         <div class="subunit-desc">목표를 작은 작업으로 나누고 상황에 따라 행동을 선택하는 흐름을 설계하며, 반복이 길어지거나 실패할 때 중단·재시도하는 처리를 다룬다.</div>
         <ol class="subsubunit-list">
-          <li><span class="subsub-name">2-2-1. 목표를 작은 작업으로 나누기</span><span class="subsub-pages">4쪽</span></li>
-          <li><span class="subsub-name">2-2-2. 상황에 따른 행동 선택</span><span class="subsub-pages">4쪽</span></li>
-          <li><span class="subsub-name">2-2-3. 결과 확인과 재시도·중단 처리</span><span class="subsub-pages">4쪽</span></li>
+          <li>
+            <div class="subsub-head"><span class="subsub-name">2-2-1. 목표를 작은 작업으로 나누기</span><span class="subsub-pages">4쪽</span></div>
+            <ul class="concept-list">
+              <li>큰 목표를 실행 가능한 작은 작업 단위로 분해</li>
+              <li>작업 간의 순서와 의존 관계 파악</li>
+              <li>분해가 잘못되면 이후 단계 전체가 흔들릴 수 있음</li>
+            </ul>
+          </li>
+          <li>
+            <div class="subsub-head"><span class="subsub-name">2-2-2. 상황에 따른 행동 선택</span><span class="subsub-pages">4쪽</span></div>
+            <ul class="concept-list">
+              <li>현재 상태와 목표를 비교해 다음 행동을 결정</li>
+              <li>여러 선택지 중 상황에 맞는 행동을 고르는 판단 과정</li>
+              <li>조건에 따라 다른 행동이 필요한 경우의 처리</li>
+            </ul>
+          </li>
+          <li>
+            <div class="subsub-head"><span class="subsub-name">2-2-3. 결과 확인과 재시도·중단 처리</span><span class="subsub-pages">4쪽</span></div>
+            <ul class="concept-list">
+              <li>행동 결과가 기대와 다를 때의 대응 방법</li>
+              <li>재시도(Retry): 같은 행동을 다시 시도</li>
+              <li>중단(Abort): 더 이상 진행하지 않고 멈추는 결정</li>
+              <li>실패가 반복될 때 무한정 재시도하지 않도록 설계</li>
+            </ul>
+          </li>
         </ol>
       </li>
       <li>
         <div class="subunit-name">2-3. 자율성과 인간의 역할 <span class="pages">9쪽</span></div>
         <div class="subunit-desc">에이전트의 자율성 수준을 판단해 인간이 개입·확인해야 하는 지점을 구분한다. 2-1, 2-2에 흩어져 있던 인간 개입 관련 내용을 별도 중단원으로 모아 책임 있는 활용 태도를 집중적으로 다룬다.</div>
         <ol class="subsubunit-list">
-          <li><span class="subsub-name">2-3-1. 자율성 수준과 인간 개입(Human-in-the-loop)</span><span class="subsub-pages">5쪽</span></li>
-          <li><span class="subsub-name">2-3-2. 사람이 확인해야 할 일 구분하기</span><span class="subsub-pages">4쪽</span></li>
+          <li>
+            <div class="subsub-head"><span class="subsub-name">2-3-1. 자율성 수준과 인간 개입(Human-in-the-loop)</span><span class="subsub-pages">5쪽</span></div>
+            <ul class="concept-list">
+              <li>자율성 수준: 에이전트가 스스로 판단하고 행동하는 범위</li>
+              <li>Human-in-the-loop: 중요한 단계에서 인간이 개입해 확인·승인하는 구조</li>
+              <li>완전 자동화와 인간 통제 사이의 균형</li>
+              <li>위험도에 따라 개입 수준을 다르게 설정할 수 있음</li>
+            </ul>
+          </li>
+          <li>
+            <div class="subsub-head"><span class="subsub-name">2-3-2. 사람이 확인해야 할 일 구분하기</span><span class="subsub-pages">4쪽</span></div>
+            <ul class="concept-list">
+              <li>결과가 되돌릴 수 없거나(비가역적) 중요한 작업은 사람이 확인</li>
+              <li>단순 반복 작업과 중요한 판단이 필요한 작업의 구분 기준</li>
+              <li>최종 책임은 사람에게 있다는 원칙</li>
+            </ul>
+          </li>
         </ol>
       </li>
     </ol>
@@ -1302,20 +1460,75 @@
         <div class="subunit-name">3-1. 검색과 근거 기반 답변의 기초 <span class="pages">17쪽</span></div>
         <div class="subunit-desc">LLM 지식의 한계, 외부 문서와 데이터, 정보 검색과 의미 기반 검색(임베딩·유사도)의 기초, 검색 증강 생성(RAG)의 기본 원리를 다룬다. “학교생활 안내 에이전트” 활동으로 도입한다. 신규 반영된 의미 기반 검색 개념은 도식과 예시 문서가 필요해 분량을 확대했다.</div>
         <ol class="subsubunit-list">
-          <li><span class="subsub-name">3-1-1. LLM 지식의 한계와 외부 문서</span><span class="subsub-pages">3쪽</span></li>
-          <li><span class="subsub-name">3-1-2. 정보 검색과 의미 기반 검색(임베딩·유사도)</span><span class="subsub-pages">6쪽</span></li>
-          <li><span class="subsub-name">3-1-3. 검색 증강 생성(RAG)의 기본 원리</span><span class="subsub-pages">5쪽</span></li>
-          <li><span class="subsub-name">3-1-4. 학교생활 안내 에이전트 실습</span><span class="subsub-pages">3쪽</span></li>
+          <li>
+            <div class="subsub-head"><span class="subsub-name">3-1-1. LLM 지식의 한계와 외부 문서</span><span class="subsub-pages">3쪽</span></div>
+            <ul class="concept-list">
+              <li>LLM은 학습 시점 이후의 정보나 특정 조직의 내부 정보를 알지 못함</li>
+              <li>외부 문서: 학교 안내문, 매뉴얼처럼 모델 밖에 존재하는 자료</li>
+              <li>모르는 정보를 다루려면 외부 자료 연결이 필요함</li>
+            </ul>
+          </li>
+          <li>
+            <div class="subsub-head"><span class="subsub-name">3-1-2. 정보 검색과 의미 기반 검색(임베딩·유사도)</span><span class="subsub-pages">6쪽</span></div>
+            <ul class="concept-list">
+              <li>키워드 검색: 단어 일치를 기준으로 찾는 방식</li>
+              <li>의미 기반 검색: 문장의 의미가 비슷한 부분을 찾는 방식</li>
+              <li>임베딩(Embedding): 텍스트를 의미를 담은 숫자 벡터로 변환한 것</li>
+              <li>유사도(Similarity): 두 임베딩이 얼마나 비슷한지 측정하는 값</li>
+            </ul>
+          </li>
+          <li>
+            <div class="subsub-head"><span class="subsub-name">3-1-3. 검색 증강 생성(RAG)의 기본 원리</span><span class="subsub-pages">5쪽</span></div>
+            <ul class="concept-list">
+              <li>RAG(Retrieval-Augmented Generation): 검색한 자료를 근거로 답을 생성하는 방식</li>
+              <li>“찾기 → 읽기 → 답하기”의 순서로 진행</li>
+              <li>검색된 내용을 프롬프트에 포함해 LLM에 전달</li>
+            </ul>
+          </li>
+          <li>
+            <div class="subsub-head"><span class="subsub-name">3-1-4. 학교생활 안내 에이전트 실습</span><span class="subsub-pages">3쪽</span></div>
+            <ul class="concept-list">
+              <li>학교생활 안내 문서에서 질문 관련 문장 찾기</li>
+              <li>찾은 근거를 바탕으로 답변 작성</li>
+              <li>근거 없이 답하지 않는 원칙 적용</li>
+            </ul>
+          </li>
         </ol>
       </li>
       <li>
         <div class="subunit-name">3-2. 신뢰할 수 있는 답변 만들기 <span class="pages">16쪽</span></div>
         <div class="subunit-desc">근거가 있는 답변 만들기, 문서에 없는 질문은 모른다고 판단하기, 자료마다 답이 다를 때 판단하는 절차, 출처·최신성 확인과 개인정보·저작권을 다룬다.</div>
         <ol class="subsubunit-list">
-          <li><span class="subsub-name">3-2-1. 근거 있는 답변 만들기</span><span class="subsub-pages">4쪽</span></li>
-          <li><span class="subsub-name">3-2-2. 모른다고 판단하기(반례 다루기)</span><span class="subsub-pages">3쪽</span></li>
-          <li><span class="subsub-name">3-2-3. 자료 간 상충 시 판단하기</span><span class="subsub-pages">4쪽</span></li>
-          <li><span class="subsub-name">3-2-4. 출처·최신성 확인과 개인정보·저작권</span><span class="subsub-pages">5쪽</span></li>
+          <li>
+            <div class="subsub-head"><span class="subsub-name">3-2-1. 근거 있는 답변 만들기</span><span class="subsub-pages">4쪽</span></div>
+            <ul class="concept-list">
+              <li>답변에 근거가 되는 원문 일부를 포함시키는 방법</li>
+              <li>근거와 답변을 연결해 신뢰도를 높이는 방식</li>
+            </ul>
+          </li>
+          <li>
+            <div class="subsub-head"><span class="subsub-name">3-2-2. 모른다고 판단하기(반례 다루기)</span><span class="subsub-pages">3쪽</span></div>
+            <ul class="concept-list">
+              <li>문서에 없는 질문에는 “확인할 수 없다”고 답하는 원칙</li>
+              <li>추측성 답변의 위험성</li>
+            </ul>
+          </li>
+          <li>
+            <div class="subsub-head"><span class="subsub-name">3-2-3. 자료 간 상충 시 판단하기</span><span class="subsub-pages">4쪽</span></div>
+            <ul class="concept-list">
+              <li>여러 자료의 내용이 서로 다를 때의 처리 방법</li>
+              <li>자료의 출처, 작성 시점을 비교해 신뢰도 판단</li>
+            </ul>
+          </li>
+          <li>
+            <div class="subsub-head"><span class="subsub-name">3-2-4. 출처·최신성 확인과 개인정보·저작권</span><span class="subsub-pages">5쪽</span></div>
+            <ul class="concept-list">
+              <li>출처 표시의 중요성</li>
+              <li>정보의 최신성 확인(오래된 정보 여부)</li>
+              <li>개인정보가 포함된 자료 취급 시 주의</li>
+              <li>저작권이 있는 자료의 무단 사용 금지</li>
+            </ul>
+          </li>
         </ol>
       </li>
     </ol>
@@ -1407,30 +1620,106 @@
         <div class="subunit-name">4-1. 함수와 도구의 기초 <span class="pages">12쪽</span></div>
         <div class="subunit-desc">함수와 도구(Tool)의 개념, 입력과 출력, API의 기초 개념을 다진다.</div>
         <ol class="subsubunit-list">
-          <li><span class="subsub-name">4-1-1. 함수와 도구(Tool)의 개념</span><span class="subsub-pages">4쪽</span></li>
-          <li><span class="subsub-name">4-1-2. 입력과 출력</span><span class="subsub-pages">4쪽</span></li>
-          <li><span class="subsub-name">4-1-3. API의 기초 개념</span><span class="subsub-pages">4쪽</span></li>
+          <li>
+            <div class="subsub-head"><span class="subsub-name">4-1-1. 함수와 도구(Tool)의 개념</span><span class="subsub-pages">4쪽</span></div>
+            <ul class="concept-list">
+              <li>함수(Function): 입력을 받아 정해진 동작을 수행하고 결과를 반환하는 코드 단위</li>
+              <li>도구(Tool): 에이전트가 호출할 수 있도록 등록된 함수</li>
+              <li>LLM이 직접 계산·검색을 하지 않고 도구에 위임하는 구조</li>
+            </ul>
+          </li>
+          <li>
+            <div class="subsub-head"><span class="subsub-name">4-1-2. 입력과 출력</span><span class="subsub-pages">4쪽</span></div>
+            <ul class="concept-list">
+              <li>도구의 입력(Parameter)과 출력(Return value)</li>
+              <li>입력값의 형식(타입)을 정확히 맞춰야 함</li>
+              <li>출력값을 다음 단계에서 활용하는 방식</li>
+            </ul>
+          </li>
+          <li>
+            <div class="subsub-head"><span class="subsub-name">4-1-3. API의 기초 개념</span><span class="subsub-pages">4쪽</span></div>
+            <ul class="concept-list">
+              <li>API: 외부 서비스(날씨, 검색 등)를 프로그램에서 호출하는 방법</li>
+              <li>요청과 응답의 기본 구조</li>
+              <li>API 키(Key): 서비스 사용을 인증하는 값</li>
+            </ul>
+          </li>
         </ol>
       </li>
       <li>
         <div class="subunit-name">4-2. Tool Calling 구현 <span class="pages">23쪽</span></div>
         <div class="subunit-desc">Python 함수를 도구로 만들고, 질문에 적합한 도구를 선택·실행하여 결과를 활용한다. “계산기를 사용하는 에이전트” 활동과 calculator·weather·search 확장 실습을 포함한다. 코드 예제가 가장 많은 중단원이라 분량을 가장 넉넉히 배정했다.</div>
         <ol class="subsubunit-list">
-          <li><span class="subsub-name">4-2-1. Python 함수를 도구로 만들기</span><span class="subsub-pages">5쪽</span></li>
-          <li><span class="subsub-name">4-2-2. 질문에 맞는 도구 선택하기</span><span class="subsub-pages">4쪽</span></li>
-          <li><span class="subsub-name">4-2-3. 입력값 전달과 결과 활용</span><span class="subsub-pages">5쪽</span></li>
-          <li><span class="subsub-name">4-2-4. 실패한 도구 호출 처리하기</span><span class="subsub-pages">4쪽</span></li>
-          <li><span class="subsub-name">4-2-5. 확장 실습: 여러 도구 조합하기</span><span class="subsub-pages">5쪽</span></li>
+          <li>
+            <div class="subsub-head"><span class="subsub-name">4-2-1. Python 함수를 도구로 만들기</span><span class="subsub-pages">5쪽</span></div>
+            <ul class="concept-list">
+              <li>일반 함수를 에이전트가 호출 가능한 도구로 등록하는 절차</li>
+              <li>함수의 이름, 설명, 입력 형식을 명시하는 방법(도구 스키마)</li>
+            </ul>
+          </li>
+          <li>
+            <div class="subsub-head"><span class="subsub-name">4-2-2. 질문에 맞는 도구 선택하기</span><span class="subsub-pages">4쪽</span></div>
+            <ul class="concept-list">
+              <li>여러 도구 중 질문 해결에 적합한 도구를 판단하는 과정</li>
+              <li>도구 설명(설명문)이 선택 판단의 근거가 됨</li>
+            </ul>
+          </li>
+          <li>
+            <div class="subsub-head"><span class="subsub-name">4-2-3. 입력값 전달과 결과 활용</span><span class="subsub-pages">5쪽</span></div>
+            <ul class="concept-list">
+              <li>질문에서 필요한 입력값을 추출해 도구에 전달</li>
+              <li>도구 실행 결과를 최종 답변에 반영하는 흐름</li>
+            </ul>
+          </li>
+          <li>
+            <div class="subsub-head"><span class="subsub-name">4-2-4. 실패한 도구 호출 처리하기</span><span class="subsub-pages">4쪽</span></div>
+            <ul class="concept-list">
+              <li>도구 실행이 실패했을 때(오류, 잘못된 입력 등)의 대응</li>
+              <li>오류 메시지를 사용자에게 그대로 노출하지 않고 처리하는 방법</li>
+            </ul>
+          </li>
+          <li>
+            <div class="subsub-head"><span class="subsub-name">4-2-5. 확장 실습: 여러 도구 조합하기</span><span class="subsub-pages">5쪽</span></div>
+            <ul class="concept-list">
+              <li>calculator·weather·search 등 여러 도구를 함께 제공</li>
+              <li>질문에 따라 알맞은 도구를 선택하는 연습</li>
+            </ul>
+          </li>
         </ol>
       </li>
       <li>
         <div class="subunit-name">4-3. 도구 사용의 위험과 안전 <span class="pages">15쪽</span></div>
         <div class="subunit-desc">필요한 권한만 제공하는 원칙, 프롬프트 인젝션의 개념과 위험, 도구 실행 결과를 검증하고 외부 지시를 무비판적으로 따르지 않는 태도를 다룬다. 신규 반영된 프롬프트 인젝션 내용은 구체적 사례 제시가 필요해 분량을 확대했다.</div>
         <ol class="subsubunit-list">
-          <li><span class="subsub-name">4-3-1. 권한 최소화의 원칙</span><span class="subsub-pages">3쪽</span></li>
-          <li><span class="subsub-name">4-3-2. 프롬프트 인젝션의 개념과 위험</span><span class="subsub-pages">6쪽</span></li>
-          <li><span class="subsub-name">4-3-3. 도구 실행 결과 검증하기</span><span class="subsub-pages">3쪽</span></li>
-          <li><span class="subsub-name">4-3-4. 외부 지시를 비판적으로 수용하는 태도</span><span class="subsub-pages">3쪽</span></li>
+          <li>
+            <div class="subsub-head"><span class="subsub-name">4-3-1. 권한 최소화의 원칙</span><span class="subsub-pages">3쪽</span></div>
+            <ul class="concept-list">
+              <li>도구에 필요한 최소한의 권한만 부여하는 원칙</li>
+              <li>과도한 권한 부여의 위험성</li>
+            </ul>
+          </li>
+          <li>
+            <div class="subsub-head"><span class="subsub-name">4-3-2. 프롬프트 인젝션의 개념과 위험</span><span class="subsub-pages">6쪽</span></div>
+            <ul class="concept-list">
+              <li>프롬프트 인젝션: 외부 입력(도구 결과·문서 등)에 숨겨진 지시가 에이전트의 판단을 조작하는 공격</li>
+              <li>도구 호출 권한을 악용하는 사례</li>
+              <li>신뢰할 수 없는 입력을 지시로 착각하지 않도록 하는 설계 필요</li>
+            </ul>
+          </li>
+          <li>
+            <div class="subsub-head"><span class="subsub-name">4-3-3. 도구 실행 결과 검증하기</span><span class="subsub-pages">3쪽</span></div>
+            <ul class="concept-list">
+              <li>도구가 성공적으로 실행되었더라도 결과가 이상할 수 있음</li>
+              <li>결과값의 형식, 범위를 확인하는 절차</li>
+            </ul>
+          </li>
+          <li>
+            <div class="subsub-head"><span class="subsub-name">4-3-4. 외부 지시를 비판적으로 수용하는 태도</span><span class="subsub-pages">3쪽</span></div>
+            <ul class="concept-list">
+              <li>도구 결과나 검색된 문서에 포함된 지시를 그대로 따르지 않는 태도</li>
+              <li>원래 목표와 무관한 지시는 무시하거나 사용자에게 확인받기</li>
+            </ul>
+          </li>
         </ol>
       </li>
     </ol>
@@ -1521,29 +1810,97 @@
         <div class="subunit-name">5-1. 문제 분해와 계획 수립 <span class="pages">11쪽</span></div>
         <div class="subunit-desc">문제 분해(Task Decomposition)와 계획(Planning), 무엇을 성공으로 볼 것인지 정하는 성공 기준(완료 판정)을 다룬다.</div>
         <ol class="subsubunit-list">
-          <li><span class="subsub-name">5-1-1. 문제 분해(Task Decomposition)</span><span class="subsub-pages">4쪽</span></li>
-          <li><span class="subsub-name">5-1-2. 계획(Planning)의 기본 개념</span><span class="subsub-pages">4쪽</span></li>
-          <li><span class="subsub-name">5-1-3. 성공 기준(완료 판정) 정하기</span><span class="subsub-pages">3쪽</span></li>
+          <li>
+            <div class="subsub-head"><span class="subsub-name">5-1-1. 문제 분해(Task Decomposition)</span><span class="subsub-pages">4쪽</span></div>
+            <ul class="concept-list">
+              <li>복잡한 문제를 해결 가능한 작은 하위 작업으로 나누는 과정</li>
+              <li>하위 작업 간의 순서와 관계 파악</li>
+            </ul>
+          </li>
+          <li>
+            <div class="subsub-head"><span class="subsub-name">5-1-2. 계획(Planning)의 기본 개념</span><span class="subsub-pages">4쪽</span></div>
+            <ul class="concept-list">
+              <li>계획: 목표 달성을 위한 작업의 순서와 방법을 미리 정하는 것</li>
+              <li>계획은 상황에 따라 바뀔 수 있음(고정된 것이 아님)</li>
+            </ul>
+          </li>
+          <li>
+            <div class="subsub-head"><span class="subsub-name">5-1-3. 성공 기준(완료 판정) 정하기</span><span class="subsub-pages">3쪽</span></div>
+            <ul class="concept-list">
+              <li>무엇을 달성해야 “성공”인지 미리 정의하는 것</li>
+              <li>성공 기준이 없으면 언제 멈춰야 할지 판단하기 어려움</li>
+            </ul>
+          </li>
         </ol>
       </li>
       <li>
         <div class="subunit-name">5-2. 계획 실행과 수정 <span class="pages">15쪽</span></div>
         <div class="subunit-desc">순차·조건·반복을 포함한 실행 흐름 만들기, 여러 도구 연결하기, 결과를 확인하여 계획을 수정하기, 자원(시간·호출 횟수) 효율을 고려하는 태도를 다룬다. “5분 과학 발표 준비 에이전트” 활동으로 연습한다.</div>
         <ol class="subsubunit-list">
-          <li><span class="subsub-name">5-2-1. 순차·조건·반복을 포함한 실행 흐름</span><span class="subsub-pages">5쪽</span></li>
-          <li><span class="subsub-name">5-2-2. 여러 도구 연결하기</span><span class="subsub-pages">4쪽</span></li>
-          <li><span class="subsub-name">5-2-3. 결과 확인과 계획 수정</span><span class="subsub-pages">3쪽</span></li>
-          <li><span class="subsub-name">5-2-4. 자원 효율을 고려하는 태도</span><span class="subsub-pages">3쪽</span></li>
+          <li>
+            <div class="subsub-head"><span class="subsub-name">5-2-1. 순차·조건·반복을 포함한 실행 흐름</span><span class="subsub-pages">5쪽</span></div>
+            <ul class="concept-list">
+              <li>순차: 정해진 순서대로 작업 실행</li>
+              <li>조건: 상황에 따라 다른 작업을 선택</li>
+              <li>반복: 조건이 만족될 때까지 작업을 되풀이</li>
+            </ul>
+          </li>
+          <li>
+            <div class="subsub-head"><span class="subsub-name">5-2-2. 여러 도구 연결하기</span><span class="subsub-pages">4쪽</span></div>
+            <ul class="concept-list">
+              <li>하나의 계획 안에서 여러 도구를 순서대로 또는 조합해 사용</li>
+              <li>한 도구의 출력이 다음 도구의 입력이 되는 연결 구조</li>
+            </ul>
+          </li>
+          <li>
+            <div class="subsub-head"><span class="subsub-name">5-2-3. 결과 확인과 계획 수정</span><span class="subsub-pages">3쪽</span></div>
+            <ul class="concept-list">
+              <li>실행 결과가 기대와 다를 때 계획을 다시 세우는 과정</li>
+              <li>재계획(Replanning)의 개념</li>
+            </ul>
+          </li>
+          <li>
+            <div class="subsub-head"><span class="subsub-name">5-2-4. 자원 효율을 고려하는 태도</span><span class="subsub-pages">3쪽</span></div>
+            <ul class="concept-list">
+              <li>시간, API 호출 횟수 등 자원의 제한을 고려하는 태도</li>
+              <li>불필요하게 많은 호출이나 반복을 피하는 설계</li>
+            </ul>
+          </li>
         </ol>
       </li>
       <li>
         <div class="subunit-name">5-3. 통합 프로젝트 설계 <span class="pages">20쪽</span></div>
         <div class="subunit-desc">학교생활 도우미, 수행평가 관리 등 관심 있는 문제를 선택해 에이전트를 설계·구현·발표하며, 필요 이상으로 복잡하게 만들지 않는 태도와 사람의 최종 검토·책임을 종합적으로 경험한다. 여러 프로젝트 예시와 구현 가이드를 함께 실어야 해 단원 내에서 가장 넉넉히 배정했다.</div>
         <ol class="subsubunit-list">
-          <li><span class="subsub-name">5-3-1. 프로젝트 주제 선정과 기획</span><span class="subsub-pages">4쪽</span></li>
-          <li><span class="subsub-name">5-3-2. 설계와 구현</span><span class="subsub-pages">8쪽</span></li>
-          <li><span class="subsub-name">5-3-3. 발표와 상호 평가</span><span class="subsub-pages">4쪽</span></li>
-          <li><span class="subsub-name">5-3-4. 인간의 최종 검토와 책임</span><span class="subsub-pages">4쪽</span></li>
+          <li>
+            <div class="subsub-head"><span class="subsub-name">5-3-1. 프로젝트 주제 선정과 기획</span><span class="subsub-pages">4쪽</span></div>
+            <ul class="concept-list">
+              <li>관심 있는 문제를 골라 에이전트로 해결 가능한 형태로 구체화</li>
+              <li>목표, 필요한 도구와 정보를 미리 정리</li>
+            </ul>
+          </li>
+          <li>
+            <div class="subsub-head"><span class="subsub-name">5-3-2. 설계와 구현</span><span class="subsub-pages">8쪽</span></div>
+            <ul class="concept-list">
+              <li>전체 에이전트 구조(목표, 도구, 정보원, 계획)를 설계</li>
+              <li>파이썬 코드로 실제 구현</li>
+            </ul>
+          </li>
+          <li>
+            <div class="subsub-head"><span class="subsub-name">5-3-3. 발표와 상호 평가</span><span class="subsub-pages">4쪽</span></div>
+            <ul class="concept-list">
+              <li>구현한 에이전트를 발표하고 시연</li>
+              <li>동료의 프로젝트를 기준에 따라 평가</li>
+            </ul>
+          </li>
+          <li>
+            <div class="subsub-head"><span class="subsub-name">5-3-4. 인간의 최종 검토와 책임</span><span class="subsub-pages">4쪽</span></div>
+            <ul class="concept-list">
+              <li>프로젝트 결과를 사람이 최종 확인하는 절차</li>
+              <li>필요 이상으로 복잡하게 만들지 않았는지 점검</li>
+              <li>결과에 대한 책임은 만든 사람에게 있다는 원칙</li>
+            </ul>
+          </li>
         </ol>
       </li>
     </ol>

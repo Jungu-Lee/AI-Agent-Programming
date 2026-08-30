@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>인공지능에이전트프로그래밍 · 교과서 개발 자료</title>
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<style>
+  @font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/woff2/PretendardVariable.woff2') format('woff2-variations');
+    font-weight: 45 920;
+  }
+
+  :root{
+    --bg: #FBFAF6;
+    --paper: #FFFFFF;
+    --ink: #22262B;
+    --ink-soft: #565C64;
+    --ink-faint: #8A9099;
+    --line: #E4E1D7;
+    --line-soft: #EDEBE2;
+
+    --u1: #3E6E8E;
+    --u1-bg: #EEF3F7;
+    --u2: #2F7D6B;
+    --u2-bg: #EAF3F0;
+    --u3: #B5762B;
+    --u3-bg: #FAF1E4;
+    --u4: #7A5A9E;
+    --u4-bg: #F3EFF7;
+    --u5: #B0432F;
+    --u5-bg: #FAEFEC;
+  }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+
+  body{
+    margin:0;
+    font-family:'Pretendard', -apple-system, 'Malgun Gothic', sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.7;
+    letter-spacing:-0.01em;
+  }
+
+  .page{
+    max-width:880px;
+    margin:0 auto;
+    padding:0 28px 100px;
+  }
+
+  /* ── 표지 ───────────────────────────────── */
+  .cover{
+    padding:76px 0 56px;
+    border-bottom:1px solid var(--line);
+  }
+  .cover .kicker{
+    font-size:13px;
+    font-weight:600;
+    letter-spacing:0.14em;
+    color:var(--ink-faint);
+    margin-bottom:20px;
+  }
+  .cover h1{
+    font-size:38px;
+    font-weight:800;
+    line-height:1.3;
+    margin:0 0 16px;
+    letter-spacing:-0.02em;
+  }
+  .cover .subtitle{
+    font-size:16.5px;
+    color:var(--ink-soft);
+    max-width:560px;
+    margin:0 0 32px;
+  }
+  .cover .meta{
+    display:flex;
+    gap:26px;
+    font-size:13px;
+    color:var(--ink-faint);
+    flex-wrap:wrap;
+  }
+  .cover .meta b{ color:var(--ink-soft); font-weight:600; }
+
+  .flow-strip{
+    margin-top:40px;
+    display:flex;
+    flex-wrap:wrap;
+    border:1px solid var(--line);
+    background:var(--paper);
+    border-radius:12px;
+    overflow:hidden;
+  }
+  .flow-strip .cell{
+    flex:1 1 140px;
+    padding:16px 15px;
+    border-right:1px solid var(--line-soft);
+  }
+  .flow-strip .cell:last-child{ border-right:none; }
+  .flow-strip .num{
+    font-size:11px;
+    font-weight:700;
+    color:#fff;
+    width:19px;height:19px;
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    margin-bottom:9px;
+  }
+  .flow-strip .cell:nth-child(1) .num{ background:var(--u1);}
+  .flow-strip .cell:nth-child(2) .num{ background:var(--u2);}
+  .flow-strip .cell:nth-child(3) .num{ background:var(--u3);}
+  .flow-strip .cell:nth-child(4) .num{ background:var(--u4);}
+  .flow-strip .cell:nth-child(5) .num{ background:var(--u5);}
+  .flow-strip .title{ font-size:13px; font-weight:700; }
+
+  /* ── 섹션 ───────────────────────────────── */
+  section{
+    padding:56px 0 0;
+  }
+  section h2{
+    font-size:19px;
+    font-weight:800;
+    margin:0 0 6px;
+  }
+  section .lead{
+    font-size:13.6px;
+    color:var(--ink-faint);
+    margin:0 0 22px;
+  }
+
+  .card-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+  }
+  .card{
+    display:block;
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:20px 22px;
+    text-decoration:none;
+    color:inherit;
+    transition:border-color .12s ease, transform .12s ease;
+  }
+  .card:hover{
+    border-color:var(--ink-faint);
+    transform:translateY(-1px);
+  }
+  .card .card-eyebrow{
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:.04em;
+    margin-bottom:8px;
+  }
+  .card h3{
+    font-size:15.5px;
+    font-weight:700;
+    margin:0 0 6px;
+    color:var(--ink);
+  }
+  .card p{
+    font-size:12.8px;
+    color:var(--ink-soft);
+    margin:0;
+    line-height:1.6;
+  }
+  .card .arrow{
+    display:inline-block;
+    margin-top:12px;
+    font-size:12.5px;
+    font-weight:600;
+    color:var(--ink-faint);
+  }
+
+  .doc-list{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+  }
+  .doc-item{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:13px 18px;
+    text-decoration:none;
+    color:inherit;
+    font-size:13.6px;
+  }
+  .doc-item:hover{ border-color:var(--ink-faint); }
+  .doc-item .icon{
+    flex:none;
+    width:30px;height:30px;
+    border-radius:7px;
+    background:var(--line-soft);
+    color:var(--ink-soft);
+    display:flex;align-items:center;justify-content:center;
+    font-size:11px;
+    font-weight:800;
+  }
+  .doc-item .txt{ flex:1; }
+  .doc-item .name{ font-weight:600; color:var(--ink); }
+  .doc-item .desc{ font-size:12px; color:var(--ink-faint); margin-top:2px; }
+  .doc-item .ext{ flex:none; font-size:11px; color:var(--ink-faint); }
+
+  .unit-strip{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+  }
+  .unit-row{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:12px 16px;
+    font-size:13.4px;
+  }
+  .unit-row .dot{
+    flex:none;
+    width:9px;height:9px;
+    border-radius:50%;
+  }
+  .unit-row .u-name{ font-weight:700; color:var(--ink); flex:none; width:170px; }
+  .unit-row .u-desc{ color:var(--ink-soft); flex:1; }
+  .unit-row .u-pages{ flex:none; font-size:11.5px; color:var(--ink-faint); }
+
+  .note{
+    margin-top:26px;
+    padding:16px 18px;
+    background:#F3F1E9;
+    border-radius:10px;
+    font-size:12.6px;
+    color:var(--ink-faint);
+    line-height:1.7;
+  }
+
+  footer{
+    margin-top:80px;
+    padding-top:24px;
+    border-top:1px solid var(--line);
+    font-size:12px;
+    color:var(--ink-faint);
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:8px;
+  }
+
+  @media (max-width:640px){
+    .cover{ padding:50px 0 40px; }
+    .cover h1{ font-size:28px; }
+    .card-grid{ grid-template-columns:1fr; }
+    .unit-row{ flex-wrap:wrap; }
+    .unit-row .u-name{ width:auto; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ══════════════ 표지 ══════════════ -->
+  <div class="cover">
+    <div class="kicker">고등학교 정보 교과용 · 교과서 개발 자료실</div>
+    <h1>인공지능에이전트프로그래밍</h1>
+    <p class="subtitle">2022 개정 교육과정 기반 고등학교 정보 교과서 집필을 위한 구성 초안과 원고, 집필 지침 자료를 모아 둔 저장소입니다.</p>
+    <div class="meta">
+      <span><b>대상</b> 고등학교 정보 교과</span>
+      <span><b>구성</b> 5단원 · 지식·이해 · 과정·기능 · 가치·태도</span>
+      <span><b>분량</b> 본문 200쪽</span>
+    </div>
+
+    <div class="flow-strip">
+      <div class="cell"><div class="num">1</div><div class="title">인공지능과 LLM</div></div>
+      <div class="cell"><div class="num">2</div><div class="title">AI 에이전트</div></div>
+      <div class="cell"><div class="num">3</div><div class="title">정보 활용</div></div>
+      <div class="cell"><div class="num">4</div><div class="title">도구 사용</div></div>
+      <div class="cell"><div class="num">5</div><div class="title">계획과 문제 해결</div></div>
+    </div>
+  </div>
+
+  <!-- ══════════════ 주요 자료 ══════════════ -->
+  <section>
+    <h2>주요 자료</h2>
+    <p class="lead">집필 논의와 실습 환경 구성에 바로 활용할 수 있는 핵심 문서입니다.</p>
+    <div class="card-grid">
+      <a class="card" href="./syllabus-draft.html">
+        <div class="card-eyebrow" style="color:var(--u4);">구성 초안</div>
+        <h3>5단원 구성 초안</h3>
+        <p>단원별 핵심 질문·아이디어, 중단원·소단원 구성, 성취기준, 대표 학습 활동을 정리한 전체 설계 문서입니다.</p>
+        <span class="arrow">문서 열기 ↗</span>
+      </a>
+      <a class="card" href="./ai-agent-dev-env.html">
+        <div class="card-eyebrow" style="color:var(--u2);">실습 환경</div>
+        <h3>AI 에이전트 개발 환경 안내</h3>
+        <p>Ollama·Docker 기반 로컬 실습 환경과 Gemini API 클라우드 실습 환경 구성 방법을 안내합니다.</p>
+        <span class="arrow">문서 열기 ↗</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ══════════════ 단원 구성 요약 ══════════════ -->
+  <section>
+    <h2>단원 구성 한눈에 보기</h2>
+    <p class="lead">전체 학습 흐름: LLM 이해 → 에이전트 이해 → 정보 활용 → 도구 사용 → 계획 기반 문제 해결</p>
+    <div class="unit-strip">
+      <div class="unit-row"><span class="dot" style="background:var(--u1)"></span><span class="u-name">1. 인공지능과 LLM</span><span class="u-desc">프롬프트와 LLM 생성 과정 관찰</span><span class="u-pages">38쪽</span></div>
+      <div class="unit-row"><span class="dot" style="background:var(--u2)"></span><span class="u-name">2. AI 에이전트</span><span class="u-desc">목표-행동-결과의 반복 이해</span><span class="u-pages">33쪽</span></div>
+      <div class="unit-row"><span class="dot" style="background:var(--u3)"></span><span class="u-name">3. 정보 활용</span><span class="u-desc">찾기-읽기-답하기(RAG)</span><span class="u-pages">33쪽</span></div>
+      <div class="unit-row"><span class="dot" style="background:var(--u4)"></span><span class="u-name">4. 도구 사용</span><span class="u-desc">Tool Calling 구현</span><span class="u-pages">50쪽</span></div>
+      <div class="unit-row"><span class="dot" style="background:var(--u5)"></span><span class="u-name">5. 계획과 문제 해결</span><span class="u-desc">Planning 기반 통합 프로젝트</span><span class="u-pages">46쪽</span></div>
+    </div>
+  </section>
+
+  <!-- ══════════════ 집필 지침 자료 ══════════════ -->
+  <section>
+    <h2>집필 지침 자료</h2>
+    <p class="lead">원고 작성 시 참고하는 집필틀과 안내서입니다. 구성 요소와 서식은 반드시 이 지침을 따릅니다.</p>
+    <div class="doc-list">
+      <a class="doc-item" href="./%EC%A4%91%EB%93%B1%20%EC%A7%91%ED%95%84%ED%8B%80%201%28%EC%86%8C%EB%8B%A8%EC%9B%90%20%EB%A7%88%EB%AC%B4%EB%A6%AC%20%EB%93%B1%20%ED%8F%AC%ED%95%A8%29.pdf">
+        <span class="icon">PDF</span>
+        <span class="txt">
+          <span class="name">중등 집필틀 1</span>
+          <span class="desc">소단원 마무리 등 포함</span>
+        </span>
+        <span class="ext">↗</span>
+      </a>
+      <a class="doc-item" href="./%EC%A4%91%EB%93%B1%20%EC%A7%91%ED%95%84%ED%8B%80%202.pdf">
+        <span class="icon">PDF</span>
+        <span class="txt">
+          <span class="name">중등 집필틀 2</span>
+          <span class="desc">중단원 창의 융합 이야기, 대단원 마무리 등</span>
+        </span>
+        <span class="ext">↗</span>
+      </a>
+      <a class="doc-item" href="./%EC%A7%91%ED%95%84%ED%8B%80%20%EC%95%88%EB%82%B4%EC%84%9C%28%EC%A4%91%EB%93%B1%201%29.pdf">
+        <span class="icon">PDF</span>
+        <span class="txt">
+          <span class="name">집필틀 안내서 (중등 1)</span>
+          <span class="desc">항목별 작성 지침</span>
+        </span>
+        <span class="ext">↗</span>
+      </a>
+      <a class="doc-item" href="./%EC%A7%91%ED%95%84%ED%8B%80%20%EC%95%88%EB%82%B4%EC%84%9C%28%EC%A4%91%EB%93%B1%202%29.pdf">
+        <span class="icon">PDF</span>
+        <span class="txt">
+          <span class="name">집필틀 안내서 (중등 2)</span>
+          <span class="desc">항목별 작성 지침</span>
+        </span>
+        <span class="ext">↗</span>
+      </a>
+    </div>
+    <div class="note">
+      원고 파일(HTML)은 저장소에 추가되는 대로 이 페이지의 "주요 자료" 영역에 함께 안내됩니다. 새 원고나 참고 문서를 저장소에 업로드한 뒤에는 이 <code>index.html</code>에도 링크를 추가해 주세요.
+    </div>
+  </section>
+
+  <footer>
+    <span>인공지능에이전트프로그래밍 · 교과서 개발 자료실</span>
+    <span>고등학교 정보 교과용</span>
+  </footer>
+
+</div>
+</body>
+</html>
